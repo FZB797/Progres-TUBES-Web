@@ -30,35 +30,48 @@
 
             <form action="#" method="post">
                 <div class="input-group">
-                    <label for="nama">Nama Lengkap</label>
-                    <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
+                    <label for="nama-karya">Nama Karya</label>
+                    <input 
+                        type="text" 
+                        id="nama-karya" 
+                        name="nama-karya" 
+                        placeholder="Masukkan nama karya..." 
+                        required="required"
+                        oninvalid="this.setCustomValidity('Kolom tidak boleh kosong')"
+                        oninput="this.setCustomValidity('')">
                 </div>
-
+              
                 <div class="input-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Masukkan email" required>
-                </div>
-
-                <div class="input-group">
-                    <label for="fokus">Fokus</label>
-                    <select id="fokus" name="fokus" required>
-                        <option value="">-- Pilih Fokus --</option>
+                    <label for="kategori">Kategori</label>
+                    <select id="kategori" name="kategori" required>
+                        <option value="">-- Pilih Kategori --</option>
                         <option value="UI/UX">UI/UX</option>
                         <option value="Web Developer">Web Developer</option>
                         <option value="Mobile Developer">Mobile Developer</option>
                     </select>
                 </div>
-
+                
                 <div class="input-group">
-                    <label for="status">Status</label>
-                    <select id="status" name="status" required>
-                        <option value="">-- Pilih Status --</option>
-                        <option value="Aktif">Aktif</option>
-                        <option value="Nonaktif">Nonaktif</option>
-                    </select>
+                    <label for="desk-karya">Deskripsi Karya</label>
+                    <input
+                        type="text"
+                        id="desk-karya"
+                        name="desk-karya"
+                        placeholder="Masukkan deskripsi karya..."
+                        required="required"
+                        oninvalid="this.setCustomValidity('Kolom ini tidak boleh kosong')"
+                        oninput="setCustomValidity('')">
                 </div>
 
-                <button type="submit" class="btn-submit">Simpan Data</button>
+                <div class="input-group">
+                     <label for="wisata-image">Gambar Karya</label>
+                    <input type="file" id="foto" name="foto">
+                </div>
+
+                <div class="add-button">
+                <button type="submit" class="btn-submit">Simpan</button>
+                <button type="reset" class="btn-submit">Batal</button>
+                </div>
             </form>
         </div>
 

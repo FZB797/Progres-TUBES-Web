@@ -25,7 +25,7 @@
         <div class="main-content">
             <header>
                 <h1>Data Anggota Inready Workgroup</h1>
-                <a href="form_anggota.php" class="btn-tambah">+ Tambah Anggota</a>
+                <a href="form_karya.php" class="btn-tambah">+ Tambah Anggota</a>
             </header>
 
             <table>

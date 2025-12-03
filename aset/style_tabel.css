@@ -162,11 +162,16 @@ select:focus {
     box-shadow: 0 0 8px rgba(255, 213, 0, 0.5);
 }
 
+.add-button { 
+    margin-bottom: 20px; 
+    text-align: left; 
+} 
+
 .btn-submit {
     background-color: #FFD500;
     color: #000;
     border: none;
-    padding: 12px 18px;
+    padding: 12px 18px 20px;
     border-radius: 8px;
     font-weight: 600;
     cursor: pointer;
