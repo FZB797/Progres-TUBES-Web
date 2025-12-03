@@ -69,8 +69,11 @@
                 </div>
 
                 <div class="add-button">
-                <button type="submit" class="btn-submit">Simpan</button>
-                <button type="reset" class="btn-submit">Batal</button>
+                    <button type="submit" id="submit">Simpan</button>
+                </div>
+
+                <div class="add-button">
+                    <button type="reset" >Batal</button>
                 </div>
             </form>
         </div>
