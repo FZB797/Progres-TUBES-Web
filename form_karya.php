@@ -15,8 +15,8 @@
         <img src="aset/logo_inr.png" alt="Logo Inready">
         <nav>
             <a href="tabel_anggota.php">Anggota</a>
-            <a href="tabel_karya.html">Karya</a>
-            <a href="landing_page.html">Keluar</a>
+            <a href="tabel_karya.php">Karya</a>
+            <a href="landing_page.php">Keluar</a>
         </nav>
     </aside>
 
@@ -46,8 +46,8 @@
                     <select id="kategori" name="kategori" required>
                         <option value="">-- Pilih Kategori --</option>
                         <option value="UI/UX">UI/UX</option>
-                        <option value="Web Developer">Web Developer</option>
-                        <option value="Mobile Developer">Mobile Developer</option>
+                        <option value="Web Developer">Website</option>
+                        <option value="Mobile Developer">Mobile</option>
                     </select>
                 </div>
                 

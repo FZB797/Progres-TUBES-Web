@@ -79,6 +79,17 @@
             </div>
         </section>
 
+        <!-- ====== JUMLAH ANGGOTA SAAT INI ====== -->
+        <section id="members">
+            <div class="container">
+                <h2>Jumlah Anggota Saat Ini</h2>
+                <div class="member-count">
+                    <h3>150+</h3>
+                    <p>Anggota Terdaftar</p>
+                </div>
+            </div>
+        </section>
+
         <!-- ====== MEDIA SOSIAL ====== -->
         <section id="media">
             <div class="container">

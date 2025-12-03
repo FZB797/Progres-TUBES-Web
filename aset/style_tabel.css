@@ -125,6 +125,12 @@ th {
     border-bottom: 1px solid #ddd;
 }
 
+.img-tabel {
+    border-radius: 8px;
+    object-fit: cover;
+    width: 100px;
+}
+
 /* ====== FORM ====== */
 form {
     background-color: #fff;
@@ -147,6 +153,7 @@ label {
 
 input,
 select {
+    font-family: 'Poppins', sans-serif;
     width: 100%;
     padding: 10px 12px;
     border-radius: 8px;
@@ -168,6 +175,7 @@ select:focus {
 } 
 
 .add-button button {
+    font-family: 'Poppins', sans-serif;
     background-color: #FFD500;
     color: #000;
     border: none;

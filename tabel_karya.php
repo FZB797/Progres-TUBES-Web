@@ -24,28 +24,28 @@
     <div class="content-wrapper">
         <div class="main-content">
             <header>
-                <h1>Data Anggota Inready Workgroup</h1>
-                <a href="form_karya.php" class="btn-tambah">+ Tambah Anggota</a>
+                <h1>Data Karya Inready Workgroup</h1>
+                <a href="form_karya.php" class="btn-tambah">+ Tambah Karya</a>
             </header>
 
             <table>
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Nama Lengkap</th>
-                        <th>Email</th>
-                        <th>Fokus</th>
-                        <th>Status</th>
+                        <th>Nama Karya</th>
+                        <th>Gambar</th>
+                        <th>Deskripsi</th>
+                        <th>Kategori</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>1</td>
-                        <td>Rizky Pratama</td>
-                        <td>rizky@example.com</td>
-                        <td>UI/UX</td>
-                        <td>Aktif</td>
+                        <td>Web Anime</td>
+                        <td><img class="img-tabel" src="aset/karya1.jpg"></td>
+                        <td>Web ini bagian awal</td>
+                        <td>Web</td>
                     </tr>
                 </tbody>
             </table>

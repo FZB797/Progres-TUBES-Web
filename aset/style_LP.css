@@ -160,6 +160,21 @@ section p {
     text-align: center;
     color: #555;
 }
+/* ======= JUMLAH ANGGOTA ====== */
+#members {
+    text-align: center; /* Semua teks di tengah */
+}
+
+.member-count h3 {
+    font-size: 4rem;   /* Perbesar ukuran angka */
+    font-weight: 700;  /* Tebalkan */
+    margin: 10px 0;
+}
+
+.member-count p {
+    font-size: 1.2rem;
+    color: #555;
+}
 
 /* ====== SOSIAL MEDIA ====== */
 #media {
