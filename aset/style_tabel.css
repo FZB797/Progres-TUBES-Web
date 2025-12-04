@@ -102,7 +102,29 @@ header h1 {
     color: #FFD500;
     box-shadow: 0 0 10px rgba(255, 213, 0, 0.5);
 }
+.btn-edit {
+    color: #007bff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
 
+.btn-hapus {
+    color: red;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
 /* ====== TABEL ====== */
 table {
     width: 100%;
@@ -211,31 +233,6 @@ select:focus {
     color: #FFD500;
     box-shadow: 0 0 10px rgba(255, 213, 0, 0.5);
 }
-
-.btn-edit {
-    color: #007bff;
-    border: none;
-    padding: 10px 16px;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s ease;
-    text-decoration: none;
-    display: inline-block;
-}
-
-.btn-hapus {
-    color: red;
-    border: none;
-    padding: 10px 16px;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s ease;
-    text-decoration: none;
-    display: inline-block;
-}
-
 
 /* ====== FOOTER ====== */
 footer {
