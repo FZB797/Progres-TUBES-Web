@@ -15,8 +15,8 @@
         <img src="aset/logo_inr.png" alt="Logo Inready">
         <nav>
             <a href="tabel_anggota.php">Anggota</a>
-            <a href="tabel_karya.html">Karya</a>
-            <a href="landing_page.html">Keluar</a>
+            <a href="tabel_karya.php">Karya</a>
+            <a href="landing_page.php">Keluar</a>
         </nav>
     </aside>
 

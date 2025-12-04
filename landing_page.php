@@ -85,7 +85,6 @@
                 <h2>Jumlah Anggota Saat Ini</h2>
                 <div class="member-count">
                     <h3>150+</h3>
-                    <p>Anggota Terdaftar</p>
                 </div>
             </div>
         </section>

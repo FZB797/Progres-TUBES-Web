@@ -16,10 +16,10 @@
             <h2>Inready Workgroup</h2>
         </div>
 
-        <form action="tabel_anggota.php" method="get">
+        <form action="ceklogin.php" method="post">
             <div class="input-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Masukkan email anda" required>
+                <label for="username">Username</label>
+                <input type="username" id="username" name="username" placeholder="Masukkan username anda" required>
             </div>
 
             <div class="input-group">
