@@ -1,26 +1,6 @@
 <?php
 include "config.php";
-
-$edit_mode = false;
-$nama = "";
-$email = "";
-$fokus = "";
-$status = "";
-
-// Jika ada parameter id → Mode Edit
-if (isset($_GET['id'])) {
-    $edit_mode = true;
-    $id = $_GET['id'];
-
-    $sql = mysqli_query($conn, "SELECT * FROM anggota WHERE id_anggota = '$id'");
-    $data = mysqli_fetch_assoc($sql);
-
-    // Isi data ke variabel
-    $nama   = $data['nama'];
-    $email  = $data['email'];
-    $fokus  = $data['fokus'];
-    $status = $data['status'];
-}
+include "proses_tambah_anggota.php";
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +11,7 @@ if (isset($_GET['id'])) {
     <title>Tambah Anggota | Inready Workgroup</title>
     <link rel="icon" type="image/png" href="aset/logo_inr.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="aset/style_tabel.css">
+    <link rel="stylesheet" href="aset/style_tabel.css?v=<?= time(); ?>">
 </head>
 <body>
 
@@ -53,7 +33,7 @@ if (isset($_GET['id'])) {
                 <a href="tabel_anggota.php" class="btn-kembali">← Kembali</a>
             </header>
 
-            <form action="proses_tambah_anggota.php" method="post">
+            <form action="" method="post">
                 <?php if ($edit_mode) { ?>
                     <input type="hidden" name="id" value="<?= $id ?>">
                 <?php } ?>
@@ -95,39 +75,7 @@ if (isset($_GET['id'])) {
                     <button type="reset" >Batal</button>
                 </div>
             </form>
-            <?php
-                if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-                    $nama   = $_POST['nama'];
-                    $email  = $_POST['email'];
-                    $fokus  = $_POST['fokus'];
-                    $status = $_POST['status'];
-
-                    // Proses Edit
-                    if (isset($_POST['id'])) {
-                        $id = $_POST['id'];
-                        $query = mysqli_query($conn,
-                            "UPDATE anggota SET 
-                                nama='$nama', 
-                                email='$email', 
-                                fokus='$fokus',
-                                status='$status'
-                            WHERE id_anggota='$id'"
-                        );
-                        echo "<script>alert('Data berhasil diperbarui'); 
-                            window.location='tabel_anggota.php';</script>";
-
-                    // Proses Tambah Baru
-                    } else {
-                        $query = mysqli_query($conn,
-                            "INSERT INTO anggota (nama, email, fokus, status)
-                            VALUES ('$nama', '$email', '$fokus', '$status')"
-                        );
-                        echo "<script>alert('Data berhasil ditambahkan'); 
-                            window.location='tabel_anggota.php';</script>";
-                    }
-                }
-            ?>
+            
         </div>
         <footer>
             &copy; 2024 Inready Workgroup. All rights reserved.

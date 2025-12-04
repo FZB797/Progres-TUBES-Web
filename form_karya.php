@@ -1,3 +1,8 @@
+<?php
+include "config.php";
+include "proses_tambah_karya.php";
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -6,7 +11,7 @@
     <title>Tambah Anggota | Inready Workgroup</title>
     <link rel="icon" type="image/png" href="aset/logo_inr.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="aset/style_tabel.css">
+    <link rel="stylesheet" href="aset/style_tabel.css?v=<?= time(); ?>">
 </head>
 <body>
 
@@ -28,14 +33,20 @@
                 <a href="tabel_karya.php" class="btn-kembali">← Kembali</a>
             </header>
 
-            <form action="proses_tambah_karya.php" method="post" enctype="multipart/form-data">
+            <form action="" method="post" enctype="multipart/form-data">
+                <?php if ($edit_mode && $foto != '') { ?>
+                    <img src="karya/<?= $foto ?>" width="120" style="border-radius:8px; margin-top:10px;">
+                    <input type="hidden" name="id" value="<?= $id ?>">
+                <?php } ?>
+
                 <div class="input-group">
                     <label for="nama-karya">Nama Karya</label>
                     <input 
                         type="text" 
                         id="nama-karya" 
                         name="nama-karya" 
-                        placeholder="Masukkan nama karya..." 
+                        placeholder="Masukkan nama karya..."
+                        value="<?= $edit_mode ? $nama_karya : '' ?>" 
                         required="required"
                         oninvalid="this.setCustomValidity('Kolom tidak boleh kosong')"
                         oninput="this.setCustomValidity('')">
@@ -45,9 +56,9 @@
                     <label for="kategori">Kategori</label>
                     <select id="kategori" name="kategori" required>
                         <option value="">-- Pilih Kategori --</option>
-                        <option value="UI/UX">UI/UX</option>
-                        <option value="Web Developer">Website</option>
-                        <option value="Mobile Developer">Mobile</option>
+                        <option value="UI/UX" <?= ($edit_mode && $kategori == 'UI/UX') ? 'selected' : '' ?>>UI/UX</option>
+                        <option value="Web Developer" <?= ($edit_mode && $kategori == 'Web Developer') ? 'selected' : '' ?>>Website</option>
+                        <option value="Mobile Developer" <?= ($edit_mode && $kategori == 'Mobile Developer') ? 'selected' : '' ?>>Mobile</option>
                     </select>
                 </div>
                 
@@ -59,6 +70,7 @@
                         name="desk-karya"
                         placeholder="Masukkan deskripsi karya..."
                         required="required"
+                        value="<?= $edit_mode ? $deskripsi : '' ?>"
                         oninvalid="this.setCustomValidity('Kolom ini tidak boleh kosong')"
                         oninput="setCustomValidity('')">
                 </div>

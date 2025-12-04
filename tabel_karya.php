@@ -6,7 +6,7 @@
     <title>Karya | Inready Workgroup</title>
     <link rel="icon" type="image/png" href="aset/logo_inr.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="aset/style_tabel.css">
+    <link rel="stylesheet" href="aset/style_tabel.css?v=<?= time(); ?>">
 </head>
 <body>
 

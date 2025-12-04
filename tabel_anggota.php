@@ -6,7 +6,7 @@
     <title>Anggota | Inready Workgroup</title>
     <link rel="icon" type="image/png" href="aset/logo_inr.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="aset/style_tabel.css">
+    <link rel="stylesheet" href="aset/style_tabel.css?v=<?= time(); ?>">
 </head>
 <body>
 
@@ -56,8 +56,8 @@
                                 <td>{$row['fokus']}</td>
                                 <td>{$row['status']}</td>
                                 <td>
-                                    <a href='form_anggota.php?id={$row['id_anggota']}' class='btn-edit'>Edit</a>
-                                    <a href='hapus_anggota.php?id={$row['id_anggota']}' class='btn-hapus' onclick='return confirm(\"Yakin ingin menghapus?\")'>Hapus</a>
+                                    <a href='form_anggota.php?id={$row['id_anggota']}' class='btn-edit'>&#9998</a>
+                                    <a href='hapus_anggota.php?id={$row['id_anggota']}' class='btn-hapus' onclick='return confirm(\"Yakin ingin menghapus?\")'>&#128465;</a>
                                 </td>
                             </tr>
                             ";
