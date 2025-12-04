@@ -40,13 +40,32 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Rizky Pratama</td>
-                        <td>rizky@example.com</td>
-                        <td>UI/UX</td>
-                        <td>Aktif</td>
-                    </tr>
+                    <tbody>
+                        <?php
+                        include "config.php";
+
+                        $no = 1;
+                        $query = mysqli_query($conn, "SELECT * FROM anggota ORDER BY id_anggota DESC");
+
+                        while ($row = mysqli_fetch_assoc($query)) {
+                            echo "
+                            <tr>
+                                <td>$no</td>
+                                <td>{$row['nama']}</td>
+                                <td>{$row['email']}</td>
+                                <td>{$row['fokus']}</td>
+                                <td>{$row['status']}</td>
+                                <td>
+                                    <a href='form_anggota.php?id={$row['id_anggota']}' class='btn-edit'>Edit</a>
+                                    <a href='hapus_anggota.php?id={$row['id_anggota']}' class='btn-hapus' onclick='return confirm(\"Yakin ingin menghapus?\")'>Hapus</a>
+                                </td>
+                            </tr>
+                            ";
+                            $no++;
+                        }
+                        ?>
+                    </tbody>
+
                 </tbody>
             </table>
         </div>

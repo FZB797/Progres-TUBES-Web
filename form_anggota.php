@@ -1,3 +1,28 @@
+<?php
+include "config.php";
+
+$edit_mode = false;
+$nama = "";
+$email = "";
+$fokus = "";
+$status = "";
+
+// Jika ada parameter id → Mode Edit
+if (isset($_GET['id'])) {
+    $edit_mode = true;
+    $id = $_GET['id'];
+
+    $sql = mysqli_query($conn, "SELECT * FROM anggota WHERE id_anggota = '$id'");
+    $data = mysqli_fetch_assoc($sql);
+
+    // Isi data ke variabel
+    $nama   = $data['nama'];
+    $email  = $data['email'];
+    $fokus  = $data['fokus'];
+    $status = $data['status'];
+}
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -28,24 +53,28 @@
                 <a href="tabel_anggota.php" class="btn-kembali">← Kembali</a>
             </header>
 
-            <form action="#" method="post">
+            <form action="proses_tambah_anggota.php" method="post">
+                <?php if ($edit_mode) { ?>
+                    <input type="hidden" name="id" value="<?= $id ?>">
+                <?php } ?>
                 <div class="input-group">
                     <label for="nama">Nama Lengkap</label>
-                    <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
+                    <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" value="<?= $nama ?>" required>
+
                 </div>
 
                 <div class="input-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Masukkan email" required>
+                    <input type="email" id="email" name="email" placeholder="Masukkan email" value="<?= $email ?>"required>
                 </div>
 
                 <div class="input-group">
                     <label for="fokus">Fokus</label>
                     <select id="fokus" name="fokus" required>
                         <option value="">-- Pilih Fokus --</option>
-                        <option value="UI/UX">UI/UX</option>
-                        <option value="Web Developer">Web Developer</option>
-                        <option value="Mobile Developer">Mobile Developer</option>
+                        <option value="UI/UX" <?= ($fokus=="UI/UX")?"selected":"" ?>>UI/UX</option>
+                        <option value="Web Developer" <?= ($fokus=="Web Developer")?"selected":"" ?>>Web Developer</option>
+                        <option value="Mobile Developer" <?= ($fokus=="Mobile Developer")?"selected":"" ?>>Mobile Developer</option>
                     </select>
                 </div>
 
@@ -53,15 +82,53 @@
                     <label for="status">Status</label>
                     <select id="status" name="status" required>
                         <option value="">-- Pilih Status --</option>
-                        <option value="Aktif">Aktif</option>
-                        <option value="Nonaktif">Nonaktif</option>
+                        <option value="Aktif" <?= ($status=="Aktif")?"selected":"" ?>>Aktif</option>
+                        <option value="Nonaktif" <?= ($status=="Nonaktif")?"selected":"" ?>>Nonaktif</option>
                     </select>
                 </div>
 
-                <button type="submit" class="btn-submit">Simpan Data</button>
-            </form>
-        </div>
+                <div class="add-button">
+                    <button type="submit" id="submit">Simpan</button>
+                </div>
 
+                <div class="add-button">
+                    <button type="reset" >Batal</button>
+                </div>
+            </form>
+            <?php
+                if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+                    $nama   = $_POST['nama'];
+                    $email  = $_POST['email'];
+                    $fokus  = $_POST['fokus'];
+                    $status = $_POST['status'];
+
+                    // Proses Edit
+                    if (isset($_POST['id'])) {
+                        $id = $_POST['id'];
+                        $query = mysqli_query($conn,
+                            "UPDATE anggota SET 
+                                nama='$nama', 
+                                email='$email', 
+                                fokus='$fokus',
+                                status='$status'
+                            WHERE id_anggota='$id'"
+                        );
+                        echo "<script>alert('Data berhasil diperbarui'); 
+                            window.location='tabel_anggota.php';</script>";
+
+                    // Proses Tambah Baru
+                    } else {
+                        $query = mysqli_query($conn,
+                            "INSERT INTO anggota (nama, email, fokus, status)
+                            VALUES ('$nama', '$email', '$fokus', '$status')"
+                        );
+                        echo "<script>alert('Data berhasil ditambahkan'); 
+                            window.location='tabel_anggota.php';</script>";
+                    }
+                }
+            ?>
+        </div>
         <footer>
             &copy; 2024 Inready Workgroup. All rights reserved.
         </footer>

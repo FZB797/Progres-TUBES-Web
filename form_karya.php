@@ -28,7 +28,7 @@
                 <a href="tabel_karya.php" class="btn-kembali">← Kembali</a>
             </header>
 
-            <form action="#" method="post">
+            <form action="proses_tambah_karya.php" method="post" enctype="multipart/form-data">
                 <div class="input-group">
                     <label for="nama-karya">Nama Karya</label>
                     <input 

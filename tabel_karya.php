@@ -40,13 +40,29 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Web Anime</td>
-                        <td><img class="img-tabel" src="aset/karya1.jpg"></td>
-                        <td>Web ini bagian awal</td>
-                        <td>Web</td>
-                    </tr>
+                    <?php
+                    include "config.php";
+
+                    $no = 1;
+                    $query = mysqli_query($conn, "SELECT * FROM karya ORDER BY id_karya DESC");
+
+                    while ($row = mysqli_fetch_assoc($query)) {
+                        echo "
+                        <tr>
+                            <td>$no</td>
+                            <td>{$row['nama_karya']}</td>
+                            <td><img src='karya/{$row['foto']}' style='width: 100px; border-radius: 8px; object-fit: cover;'  ></td>
+                            <td>{$row['deskripsi']}</td>
+                            <td>{$row['kategori']}</td>
+                            <td>
+                                <a href='form_karya.php?id={$row['id_karya']}' class='btn-edit'>&#9998</a>
+                                <a href='hapus_karya.php?id={$row['id_karya']}' class='btn-hapus' onclick='return confirm(\"Yakin ingin menghapus?\")'>&#128465;</a>
+                            </td>
+                        </tr>
+                        ";
+                        $no++;
+                    }
+                    ?>
                 </tbody>
             </table>
         </div>
