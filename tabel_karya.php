@@ -1,3 +1,8 @@
+<?php
+include "harus_login.php";
+include "config.php";
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>

@@ -1,5 +1,5 @@
 <?php
-include "config.php";
+include "harus_login.php";
 include "proses_tambah_karya.php";
 ?>
 

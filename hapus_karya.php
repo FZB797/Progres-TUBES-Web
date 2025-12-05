@@ -1,11 +1,9 @@
 <?php
-include "config.php"; // Koneksi menggunakan $conn
+include "harus_login.php";
 
-// Pastikan parameter id dikirim
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
-    // Query hapus
     $query = mysqli_query($conn, "DELETE FROM karya WHERE id_karya = '$id'");
 
     if ($query) {

@@ -28,6 +28,7 @@
             </div>
 
             <button type="submit" class="btn-login">Masuk</button>
+            <a href="landing_page.php" class="btn-kembali">⟵ Kembali ke Beranda</a>
         </form>
     </div>
 

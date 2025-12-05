@@ -1,11 +1,12 @@
 <?php
+include "harus_login.php";
+
 $koneksi = mysqli_connect("localhost", "root", "", "data_inready");
 
 if(mysqli_connect_errno()){ 
     echo "Koneksi gagal: " . mysqli_connect_error(); 
 }
 
-include "config.php";
 $edit_mode = false;
 $nama = "";
 $email = "";
