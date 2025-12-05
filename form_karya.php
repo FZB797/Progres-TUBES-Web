@@ -21,7 +21,7 @@ include "proses_tambah_karya.php";
         <nav>
             <a href="tabel_anggota.php">Anggota</a>
             <a href="tabel_karya.php">Karya</a>
-            <a href="landing_page.php">Keluar</a>
+            <a href="logout.php">Keluar</a>
         </nav>
     </aside>
 

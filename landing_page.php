@@ -23,6 +23,7 @@
                 <li><a class="nav-item" href="#about">Tentang Kami</a></li>
                 <li><a class="nav-item" href="#class">Kelas</a></li>
                 <li><a class="nav-item" href="#work">Karya</a></li>
+                <li><a class="nav-item" href="#members">Jumlah Anggota</a></li>
                 <li><a class="nav-item" href="#media">Sosmed</a></li>
             </ul>
             <a href="login.php" class="login">Login</a>
@@ -83,7 +84,7 @@
             <div class="container">
                 <h2>Jumlah Anggota Saat Ini</h2>
                 <div class="member-count">
-                    <h3>150+</h3>
+                    <h3 id="totalAnggota">Memuat...</h3>
                 </div>
             </div>
         </section>
@@ -108,6 +109,17 @@
         <footer>
             &copy; 2024 Inready Workgroup. All rights reserved.
         </footer>
+
+        <script>
+        fetch("jumlah_anggota.php")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("totalAnggota").innerText = data + "+";
+            })
+            .catch(error => {
+                document.getElementById("totalAnggota").innerText = "Error";
+            });
+        </script>
 
     </body>
 </html>
