@@ -73,9 +73,9 @@
         <section id="work">
             <h2>Karya INR</h2>
             <div class="class-list">
-                <div class="work-item"><img src="aset/karya1.jpg" alt="Karya 1"></div>
-                <div class="work-item"><img src="aset/karya2.jpg" alt="Karya 2"></div>
-                <div class="work-item"><img src="aset/karya3.jpg" alt="Karya 3"></div>
+                <div class="work-item"><img src="karya/karya1.jpg" alt="Karya 1"></div>
+                <div class="work-item"><img src="karya/karya2.jpg" alt="Karya 2"></div>
+                <div class="work-item"><img src="karya/karya3.jpg" alt="Karya 3"></div>
             </div>
         </section>
 

@@ -9,4 +9,4 @@ if (!$conn) {
 $query = mysqli_query($conn, "SELECT COUNT(*) AS total FROM anggota");
 $hasil = mysqli_fetch_assoc($query);
 
-echo $hasil['total']; // hanya output angka
+echo $hasil['total'];
